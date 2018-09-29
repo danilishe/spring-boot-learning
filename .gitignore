@@ -84,8 +84,6 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
-*.iml
-.idea
 src/test/
 target/classes/templates/
 target/generated-sources/
