@@ -11,7 +11,7 @@
 
 </form>
 <div>
-    <form method="post" action="add">
+    <form method="post" action="main">
         <input type="text" name="text" placeholder="Message">
         <input type="text" name="tag" placeholder="Tag">
         <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
@@ -33,6 +33,7 @@
             <b>{{id}}</b>
             <span>{{text}}</span>
             <i>{{tag}}</i>
+            <u>{{ authorName }}</u>
         </div>
     {{/messages}}
 </div>
