@@ -1,5 +1,6 @@
 package com.example.sweater.service;
 
+import com.example.sweater.domain.User;
 import com.example.sweater.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +15,11 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepo.findByUsername(username);
+        User user = null;
+        if (username != null && !username.isEmpty())
+            user = userRepo.findByUsername(username);
+
+        if (user == null) throw new UsernameNotFoundException("User not found");
+        return user;
     }
 }
